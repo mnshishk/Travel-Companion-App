@@ -27,7 +27,7 @@
 }
 .right-panel {
 	position: absolute;
-	right: 0;
+	left: 500;
 	bottom: 25vh;
 	height: 50vh;
 	width: 20px;
