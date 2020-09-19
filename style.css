@@ -17,6 +17,8 @@
 .left-panel ul li{
 	line-height: 50px;
 	list-style: none;
+	position: absolute;
+	width: 10px;
 }
 
 .left-panel ul li a{
