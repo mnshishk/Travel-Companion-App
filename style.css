@@ -1,0 +1,27 @@
+.left-panel {
+	position: absolute;
+	left: 0;
+	bottom: 25vh;
+	height: 50vh;
+	width: 20px;
+	padding: 0 5px;
+	background-color: #1b1b1b; 
+	z-index: 1000;
+}
+
+.left-panel ul {
+	padding-top: 15px;
+
+}
+
+.left-panel ul li{
+	line-height: 50px;
+	list-style: none;
+}
+
+.left-panel ul li a{
+	display: block;
+	height: 60px;
+	padding: 0 10px;
+	text-decoration: none;
+}
