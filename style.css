@@ -3,7 +3,7 @@
 	left: 0;
 	bottom: 25vh;
 	height: 50vh;
-	width: 20px;
+	width: 300px;
 	padding: 0 5px;
 	background-color: #1b1b1b;
 	z-index: 1000;
@@ -30,7 +30,7 @@
 	right: 0px;
 	bottom: 25vh;
 	height: 50vh;
-	width: 20px;
+	width: 200px;
 	padding: 0 5px;
 	background-color: #1b1b1b;
 	z-index: 1000;
