@@ -5,7 +5,7 @@
 	height: 50vh;
 	width: 20px;
 	padding: 0 5px;
-	background-color: #1b1b1b; 
+	background-color: #1b1b1b;
 	z-index: 1000;
 }
 
@@ -20,6 +20,33 @@
 }
 
 .left-panel ul li a{
+	display: block;
+	height: 60px;
+	padding: 0 10px;
+	text-decoration: none;
+}
+.right-panel {
+	position: absolute;
+	right: 0;
+	bottom: 25vh;
+	height: 50vh;
+	width: 20px;
+	padding: 0 5px;
+	background-color: #1b1b1b;
+	z-index: 1000;
+}
+
+.right-panel ul {
+	padding-top: 15px;
+
+}
+
+.right-panel ul li{
+	line-height: 50px;
+	list-style: none;
+}
+
+.right-panel ul li a{
 	display: block;
 	height: 60px;
 	padding: 0 10px;
