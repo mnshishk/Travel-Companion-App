@@ -3,29 +3,25 @@
 	left: 0;
 	bottom: 25vh;
 	height: 50vh;
-	width: 20px;
 	padding: 0 5px;
 	background-color: #1b1b1b;
 	z-index: 1000;
-	cursor: pointer;
 }
 
 .left-panel ul {
 	padding-top: 15px;
-	align-content: center;
-	/*visibility: hidden;*/
+
 }
 
 .left-panel ul li{
-	line-height: 60px;
+	line-height: 50px;
 	list-style: none;
-	flex-direction: column;
 }
 
 .left-panel ul li a{
 	display: block;
 	height: 60px;
-	padding: 0 5px;
+	padding: 0 10px;
 	text-decoration: none;
 }
 .right-panel {
@@ -33,7 +29,6 @@
 	right: 0px;
 	bottom: 25vh;
 	height: 50vh;
-	width: 20px;
 	padding: 0 5px;
 	background-color: #1b1b1b;
 	z-index: 1000;
