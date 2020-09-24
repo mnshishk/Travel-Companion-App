@@ -3,16 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <!--newApp.html-->
-    <title>newApp.html</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cross-Country</title>
+
+    <!--- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
  	<link rel="stylesheet" href="style.css">
+	<!--this is what matters for me-->
+ 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap"></script>
+ 	<script src="map.js"></script>
 
 </head>
 <body>
-
+	<!--this is what matters for me-->
+	<div id="map"></div>
+	<!--can be changed-->
 	<aside class="left-panel">
+		<button class="button_left"></button>
 		<ul>
 			<li><a href="#">Route to a Gas Station</a></li>
 			<li><a href="#">Hotel Options</a></li>
@@ -22,21 +38,12 @@
 	</aside>
   <aside class="right-panel">
 		<ul>
-			<li><a href="#">Route to final</a></li>
-			<li><a href="#">Add stop</a></li>
-			<li><a href="#">Multi Day</a></li>
-			<li><a href="#">Settings</a></li>
+			<li><a href="#">Route to a final destination</a></li>
+			<li><a href="#">Add stop to destination</a></li>
+			<li><a href="#">Plan Multi day journey</a></li>
+			<li><a href="#">Map settings</a></li>
 		</ul>
 	</aside>
-
-  <div class="Intro">
-        <h1> Directions </h1>
-    </div>
-
-    <img src="https://ubcms.buffalo.edu/content/www/cmshelp/help/components-library/more/map-google/_jcr_content/par/image_1.img.original.jpg/1474468112196.jpg" alt="Temp pic">
-
-
-    <h2> Arrival Time</h2>
 
 </body>
 </html>
