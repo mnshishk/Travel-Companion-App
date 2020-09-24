@@ -7,24 +7,25 @@
 	padding: 0 5px;
 	background-color: #1b1b1b;
 	z-index: 1000;
+	cursor: pointer;
 }
 
 .left-panel ul {
 	padding-top: 15px;
-
+	align-content: center;
+	/*visibility: hidden;*/
 }
 
 .left-panel ul li{
-	line-height: 50px;
+	line-height: 60px;
 	list-style: none;
-	position: absolute;
-	width: 10px;
+	flex-direction: column;
 }
 
 .left-panel ul li a{
 	display: block;
 	height: 60px;
-	padding: 0 10px;
+	padding: 0 5px;
 	text-decoration: none;
 }
 .right-panel {
