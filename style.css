@@ -65,12 +65,34 @@ div[class="sidebar"] {
 .sidebar > ul > li{
 	list-style:none;
 	margin-top: 30px;
-	font-size: 30px;
+	font-size: 20px;
 }
 input[id="menuicon"]:checked + label + div{
 	left:0;
 }
-
+.right-panel {
+	position: absolute;
+	right: 0px;
+	bottom: 30vh;
+	height: 50vh;
+	width: 200px;
+	padding: 0 5px;
+	background-color: #1b1b1b;
+	z-index: 1000;
+}
+.right-panel ul {
+	padding-top: 5px;
+	}
+.right-panel ul li{
+	line-height: 20px;
+	list-style: none;
+}
+.right-panel ul li a{
+	display: block;
+	height: 50px;
+	padding: 0 10px;
+	text-decoration: none;
+	}
 
 body {
     background-color: lightblue;
