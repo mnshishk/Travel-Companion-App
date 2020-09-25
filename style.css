@@ -49,7 +49,7 @@ input[id = "menuicon"]:checked + label span:nth-child(3){
 }
 
 div[class="sidebar"] {
-	width:20px;
+	width:200px;
 	height:100%;
 	background:#ffffff;
 	position:fixed;
