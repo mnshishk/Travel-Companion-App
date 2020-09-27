@@ -92,30 +92,27 @@ input[id="menuicon"]:checked + label + div{
 	height: 50px;
 	padding: 0 10px;
 	text-decoration: none;
-	}
 
-body {
-    background-color: lightblue;
-  }
+}
 
-div.Intro {
-    color: navy;
-    margin-left: 20px;
-    text-align: center;
-    border: 3px solid green;
-  }
 
-  img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 200px
-  }
+.top-panel{
+	position:absolute;
+	top:0;
+	left:0vh;
+	width: 100%;
+	background-color: white;
+	font-size: large;
 
-  h2 {
-      color: navy;
-      margin-top: 200px;
-      text-align: center;
-      border: 3px solid green;
-      font-size: 30px;
-  }
+
+
+}
+.bottom-panel{
+	position:absolute;
+	bottom:0vh;
+	left: 0vh;
+	width:100%;
+	background-color: white;
+	font-size: large;
+}
+
