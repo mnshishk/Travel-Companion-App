@@ -5,14 +5,12 @@
 
 .left-panel {
 	position: absolute;
-	left: 0;
-	bottom: 25vh;
+	bottom: 30vh;
 	height: 50vh;
 	padding: 0 5px;
 	background-color: #1b1b1b;
 	z-index: 1000;
 }
-
 .left-panel ul {
 	padding-top: 15px;
 
@@ -29,29 +27,49 @@
 	padding: 0 10px;
 	text-decoration: none;
 }
+
 .right-panel {
 	position: absolute;
 	right: 0px;
-	bottom: 25vh;
+	bottom: 30vh;
 	height: 50vh;
+	width: 200px;
 	padding: 0 5px;
 	background-color: #1b1b1b;
 	z-index: 1000;
 }
 
 .right-panel ul {
-	padding-top: 15px;
-
-}
+	padding-top: 5px;
+	}
 
 .right-panel ul li{
-	line-height: 50px;
+	line-height: 20px;
 	list-style: none;
 }
 
 .right-panel ul li a{
 	display: block;
-	height: 60px;
+	height: 50px;
 	padding: 0 10px;
 	text-decoration: none;
+}
+
+.top-panel{
+	position:absolute;
+	top:0;
+	left:0vh;
+	width: 100%;
+	background-color: white;
+	font-size: large;
+	text-align: center;
+}
+.bottom-panel{
+	position:absolute;
+	bottom:0vh;
+	left: 0vh;
+	width:100%;
+	background-color: white;
+	font-size: large;
+	text-align: center;
 }
