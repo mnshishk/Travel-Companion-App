@@ -55,28 +55,3 @@
 	padding: 0 10px;
 	text-decoration: none;
 }
-body {
-    background-color: lightblue;
-  }
-
-div.Intro {
-    color: navy;
-    margin-left: 20px;
-    text-align: center;
-    border: 3px solid green;
-  }
-
-  img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 200px
-  }
-
-  h2 {
-      color: navy;
-      margin-top: 200px;
-      text-align: center;
-      border: 3px solid green;
-      font-size: 30px;
-  }
