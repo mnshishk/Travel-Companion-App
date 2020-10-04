@@ -21,7 +21,8 @@
 	<!--this is what matters for me-->
  	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap"></script>
  	<script src="map.js"></script>
-
+	
+	
 </head>
 <body>
 
@@ -32,11 +33,11 @@
 
 
 		<ul>
-			<li><a>sidebar1</li>
-			<li><a>sidebar2</li>
-			<li><a>sidebar3</li>
-			<li><a>sidebar4</li>
-			<li><a>sidebar5</li>
+			<li><a href="#">sidebar1</li>
+			<li><a href="#">sidebar2</li>
+			<li><a href="#">sidebar3</li>
+			<li><a href="#">sidebar4</li>
+			<li><a href="#">sidebar5</li>
 		</ul>
 	</div>
 
@@ -45,8 +46,33 @@
 			<li><a href="#">Route to a final destination</a></li>
 			<li><a href="#">Add stop to destination</a></li>
 			<li><a href="#">Plan Multi day journey</a></li>
-			<li><a href="#">Map settings</a></li>
+		
+
+			<button id="myBtn"class="myBtn">Map Settings</button>
+			<div id="myModal" class="modal">
+
+		
+				<div class="modal-content">
+				  <div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Map Settings</h2>
+				  </div>
+				  <div class="modal-body">
+					<p>Range</p>
+					<div class="slidecontainer">
+						<input type="range" min="1" max="100" value="50" class="slider" id="area">
+						<p>Value: <span id="miles"></span></p>
+				  <div class="modal-footer">
+					<h3>Map Settings</h3>
+				  </div>
+				</div>
+			  
+			  </div>
+			  <script src="modal.js"></script>
+			  <script src="slide.js"></script>
+			  <script src="slide2.js"></script>
 		</ul>
+	
 	</aside>
 
 	
