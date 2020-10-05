@@ -29,28 +29,31 @@
 	<!--this is what matters for me-->
 	<div id="map"></div>
 	<!--can be changed-->
-	<aside class="left-panel">
-
-
+	<input type = "checkbox" id="L_menuicon">
+	<label for = "L_menuicon">
+		<span></span>
+		<span></span>
+		<span></span>
+	</label>
+	<div class="left-panel">
 		<ul>
-			<li><a href="#">sidebar1</li>
-			<li><a href="#">sidebar2</li>
-			<li><a href="#">sidebar3</li>
-			<li><a href="#">sidebar4</li>
-			<li><a href="#">sidebar5</li>
+			<li><a href="#">Route to a Gas Station</a></li>
+			<li><a href="#">Hotel Options</a></li>
+			<li><a href="#">Entertainment Options</a></li>
+			<li><a href="#">Food Options</a></li>
 		</ul>
 	</div>
 
-	<aside class="right-panel">
+	<div class="right-panel">
 		<ul>
 			<li><a href="#">Route to a final destination</a></li>
 			<li><a href="#">Add stop to destination</a></li>
 			<li><a href="#">Plan Multi day journey</a></li>
 		
-
+		
 			<button id="myBtn"class="myBtn">Map Settings</button>
 			<div id="myModal" class="modal">
-
+  
 		
 				<div class="modal-content">
 				  <div class="modal-header">
@@ -61,19 +64,18 @@
 					<p>Range</p>
 					<div class="slidecontainer">
 						<input type="range" min="1" max="100" value="50" class="slider" id="area">
-						<p>Value: <span id="miles"></span></p>
+						<p>Miles: <span id="miles"></span></p>
 				  <div class="modal-footer">
 					<h3>Map Settings</h3>
 				  </div>
 				</div>
-			  
-			  </div>
+			</ul>
+			
 			  <script src="modal.js"></script>
 			  <script src="slide.js"></script>
-			  <script src="slide2.js"></script>
-		</ul>
+		
 	
-	</aside>
+		</div>
 
 	
 
