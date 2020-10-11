@@ -17,11 +17,24 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
+  <!-- Google Directions API -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap&libraries=&v=weekly"
+      defer
+      ></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+
  	<link rel="stylesheet" href="style.css">
 	<!--this is what matters for me-->
  	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap"></script>
  	<script src="map.js"></script>
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 </head>
 <body>
 	<!--this is what matters for me-->
@@ -47,6 +60,7 @@
 			<li><a href="#">Route to a final destination</a></li>
 			<li><a href="#">Add stop to destination</a></li>
 			<li><a href="#">Plan Multi day journey</a></li>
+<<<<<<< Updated upstream
 			<li><a href="#">Map settings</a></li>
 		</ul>
 	</div>
@@ -56,5 +70,73 @@
   	<aside class="bottom-panel">
     	<a href="#">Time to Arrival</a>
   	</aside>
+=======
+
+
+			<button id="myBtn"class="myBtn">Map Settings</button>
+			<div id="myModal" class="modal">
+
+
+				<div class="modal-content">
+				  <div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Map Settings</h2>
+				  </div>
+				  <div class="modal-body">
+					<p>Range</p>
+					<div class="slidecontainer">
+						<input type="range" min="1" max="100" value="50" class="slider" id="area">
+						<p>Miles: <span id="miles"></span></p>
+				  <div class="modal-footer">
+					<h3>Map Settings</h3>
+				  </div>
+				</div>
+			</ul>
+
+			  <script src="modal.js"></script>
+			  <script src="slide.js"></script>
+
+
+		</div>
+    <!-- Menu options for the map -->
+    <div id="floating-panel">
+      <b>Start: </b>
+      <select id="start">
+        <option value="buffalo, ny">Buffalo</option>
+        <option value="chicago, il">Chicago</option>
+        <option value="st louis, mo">St Louis</option>
+        <option value="joplin, mo">Joplin, MO</option>
+        <option value="oklahoma city, ok">Oklahoma City</option>
+        <option value="amarillo, tx">Amarillo</option>
+        <option value="gallup, nm">Gallup, NM</option>
+        <option value="flagstaff, az">Flagstaff, AZ</option>
+        <option value="winona, az">Winona</option>
+        <option value="kingman, az">Kingman</option>
+        <option value="barstow, ca">Barstow</option>
+        <option value="san bernardino, ca">San Bernardino</option>
+        <option value="los angeles, ca">Los Angeles</option>
+      </select>
+      <b>End: </b>
+      <select id="end">
+        <option value="buffalo, ny">Buffalo</option>
+        <option value="chicago, il">Chicago</option>
+        <option value="st louis, mo">St Louis</option>
+        <option value="joplin, mo">Joplin, MO</option>
+        <option value="oklahoma city, ok">Oklahoma City</option>
+        <option value="amarillo, tx">Amarillo</option>
+        <option value="gallup, nm">Gallup, NM</option>
+        <option value="flagstaff, az">Flagstaff, AZ</option>
+        <option value="winona, az">Winona</option>
+        <option value="kingman, az">Kingman</option>
+        <option value="barstow, ca">Barstow</option>
+        <option value="san bernardino, ca">San Bernardino</option>
+        <option value="los angeles, ca">Los Angeles</option>
+      </select>
+    </div>
+    <div id="map"></div>
+  </body>
+
+
+>>>>>>> Stashed changes
 </body>
 </html>
