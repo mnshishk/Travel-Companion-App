@@ -1,19 +1,10 @@
-<<<<<<< Updated upstream
-function initMap(){
-	var map = new google.maps.Map(document.getElementById("map"), {
-		zoom: 8,
-		center: {lat:42.880230,lng:-78.878738},
-=======
 function initMap() {
   const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer();
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 7,
     center: { lat: 42.88, lng: -78.87 },
->>>>>>> Stashed changes
-		mapTypeControl: false,
-		fullscreenControl: false,
-		zoomControl: false
+		
 
   });
   directionsRenderer.setMap(map);
