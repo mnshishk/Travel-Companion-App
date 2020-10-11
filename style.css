@@ -209,6 +209,7 @@ input[id="L_menuicon"]:checked + label + div + div{
 	background: #3a19f3; /* Green background */
 	cursor: pointer; /* Cursor on hover */
   }
+
   .search input[type=textbox] {
 	padding: 6px;
 	font-size: 17px;
@@ -223,3 +224,16 @@ input[id="L_menuicon"]:checked + label + div + div{
 	border: none;
 	cursor: pointer;
   }
+  #floating-panel {
+	position: absolute;
+	bottom: 10px;
+	left: 45%;
+	z-index: 5;
+	background-color: #fff;
+	padding: 5px;
+	border: 1px solid #999;
+	text-align: center;
+	font-family: "Roboto", "sans-serif";
+	line-height: 30px;
+	padding-left: 10px;
+	}

@@ -19,50 +19,125 @@
 
  	<link rel="stylesheet" href="style.css">
 	<!--this is what matters for me-->
- 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap"></script>
-	 <script src="map.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap"></script>
+	<script src="map.js"></script>
+
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
+	 <!-- Google Directions API -->
+	 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 	 <script
-	 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap&libraries=places&v=weekly"
-	 defer
-   ></script>
+		 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap&libraries=&v=weekly"
+		 defer
+		 ></script>
+	   <script src="./index.js"></script>
 
 
-	 <div class="search">
-		<script src="search.js"></script>
-		  <input type="textbox" id="address" placeholder="Search.." name="search">
-		  <button id="submit"><i class="fa fa-search"></i></button>
-		 
-		
-	  </div>
+
+	   <link rel="stylesheet" type="text/css" href="./style.css" />
+   <!--seach bar-->
+   <div class="search">
+	<script src="search.js"></script>
+	  <input type="textbox" id="address" placeholder="Search..." name="search">
+	  <button id="submit"><i class="fa fa-search"></i></button>
+	</div>
+
+ 
 </head>
 <body>
 
-	<!--this is what matters for me-->
-	<div id="map"></div>
-	<!--can be changed-->
-	<aside class="left-panel">
+<!--this is what matters for me-->
+<div id="map"></div>
+<!--can be changed-->
+<input type = "checkbox" id="L_menuicon">
+<label for = "L_menuicon">
+	<span></span>
+	<span></span>
+	<span></span>
+</label>
+<div class="left-panel">
+	<ul>
+		<li><a href="#">Route to a Gas Station</a></li>
+		<li><a href="#">Hotel Options</a></li>
+		<li><a href="#">Entertainment Options</a></li>
+		<li><a href="#">Food Options</a></li>
+	</ul>
+</div>
 
+<div class="right-panel">
+	<ul>
+		<li><a href="#">Route to a final destination</a></li>
+		<li><a href="#">Add stop to destination</a></li>
+		<li><a href="#">Plan Multi day journey</a></li>
+	
+	
+		<button id="myBtn"class="myBtn">Map Settings</button>
+		<div id="myModal" class="modal">
 
-		<ul>
-			<li><a>sidebar1</li>
-			<li><a>sidebar2</li>
-			<li><a>sidebar3</li>
-			<li><a>sidebar4</li>
-			<li><a>sidebar5</li>
+	
+			<div class="modal-content">
+			  <div class="modal-header">
+				<span class="close">&times;</span>
+				<h2>Map Settings</h2>
+			  </div>
+			  <div class="modal-body">
+				<p>Range</p>
+				<div class="slidecontainer">
+					<input type="range" min="1" max="100" value="50" class="slider" id="area">
+					<p>Miles: <span id="miles"></span></p>
+			  <div class="modal-footer">
+				<h3>Map Settings</h3>
+			  </div>
+			</div>
 		</ul>
-	</div>
+		
+		  <script src="modal.js"></script>
+		  <script src="slide.js"></script>
+</div>
 
-	<aside class="right-panel">
-		<ul>
-			<li><a href="#">Route to a final destination</a></li>
-			<li><a href="#">Add stop to destination</a></li>
-			<li><a href="#">Plan Multi day journey</a></li>
-			<li><a href="#">Map settings</a></li>
-		</ul>
-	</aside>
 
+ <!-- Menu options for the map -->
+<div id="floating-panel">
+		<b>Start: </b>
+		<select id="start">
+		  <option value="buffalo, ny">Buffalo</option>
+		  <option value="chicago, il">Chicago</option>
+		  <option value="st louis, mo">St Louis</option>
+		  <option value="joplin, mo">Joplin, MO</option>
+		  <option value="oklahoma city, ok">Oklahoma City</option>
+		  <option value="amarillo, tx">Amarillo</option>
+		  <option value="gallup, nm">Gallup, NM</option>
+		  <option value="flagstaff, az">Flagstaff, AZ</option>
+		  <option value="winona, az">Winona</option>
+		  <option value="kingman, az">Kingman</option>
+		  <option value="barstow, ca">Barstow</option>
+		  <option value="san bernardino, ca">San Bernardino</option>
+		  <option value="los angeles, ca">Los Angeles</option>
+		</select>
+		<b>End: </b>
+		<select id="end">
+		  <option value="buffalo, ny">Buffalo</option>
+		  <option value="chicago, il">Chicago</option>
+		  <option value="st louis, mo">St Louis</option>
+		  <option value="joplin, mo">Joplin, MO</option>
+		  <option value="oklahoma city, ok">Oklahoma City</option>
+		  <option value="amarillo, tx">Amarillo</option>
+		  <option value="gallup, nm">Gallup, NM</option>
+		  <option value="flagstaff, az">Flagstaff, AZ</option>
+		  <option value="winona, az">Winona</option>
+		  <option value="kingman, az">Kingman</option>
+		  <option value="barstow, ca">Barstow</option>
+		  <option value="san bernardino, ca">San Bernardino</option>
+		  <option value="los angeles, ca">Los Angeles</option>
+		</select>
+</div>
+
+
+
+
+	 
+	
+  
 	
 
 </body>
