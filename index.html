@@ -20,8 +20,22 @@
  	<link rel="stylesheet" href="style.css">
 	<!--this is what matters for me-->
  	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap"></script>
- 	<script src="map.js"></script>
+	 <script src="map.js"></script>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	 <script
+	 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap&libraries=places&v=weekly"
+	 defer
+   ></script>
 
+
+	 <div class="search">
+		<script src="search.js"></script>
+		  <input type="textbox" id="address" placeholder="Search.." name="search">
+		  <button id="submit"><i class="fa fa-search"></i></button>
+		 
+		
+	  </div>
 </head>
 <body>
 
