@@ -1,3 +1,4 @@
+  
 var slider = document.getElementById("area");
 var output = document.getElementById("miles");
 output.innerHTML = slider.value; // Display the default slider value
