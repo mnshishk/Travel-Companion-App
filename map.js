@@ -1,3 +1,8 @@
+//Global variabvles that take in the position of the user and
+//the geocode result of the search bar so that they can be used in calculateAndDisplayRoute funtion
+var globalOrigin;
+var globalEnd;
+
 //create a marker for the map
 function setMarker(pos, map){
 	var marker = new google.maps.Marker({
@@ -19,6 +24,7 @@ function getUserLoc(geocoder, map){
         navigator.geolocation.getCurrentPosition(function(position){
         	// got the lattitude and longitude
         	var latLng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
+					globalOrigin = new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
             map.setCenter(latLng);
             geocoder.geocode({ location: latLng }, (results, status) => {
 			    if (status === "OK") {
@@ -26,6 +32,7 @@ function getUserLoc(geocoder, map){
 			        map.setZoom(11);
 			        map.setCenter(latLng);
             		var marker = setMarker(latLng, map, "You are here");
+								holder = marker;
 			        infoWin.setContent(results[0].formatted_address);
 			        infoWin.open(map, marker);
 			      } else {
@@ -49,12 +56,9 @@ function geocodeAddress(geocoder, resultsMap) {
 	const address = document.getElementById("address").value;
 	geocoder.geocode({ address: address }, (results, status) => {
 	  if (status === "OK") {
-		resultsMap.setCenter(results[0].geometry.location);
-		resultsMap.setZoom(15);
-		new google.maps.Marker({
-		  map: resultsMap,
-		  position: results[0].geometry.location,
-		});
+		//resultsMap.setCenter(results[0].geometry.location);
+		//resultsMap.setZoom(15);
+		globalEnd = results[0].geometry.location;
 	  } else {
 		alert("Geocode was not successful for the following reason: " + status);
 	  }
@@ -63,24 +67,20 @@ function geocodeAddress(geocoder, resultsMap) {
 
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-  directionsService.route(
-    {
-      origin: {
-        query: document.getElementById("start").value,
-      },
-      destination: {
-        query: document.getElementById("end").value,
-      },
-      travelMode: google.maps.TravelMode.DRIVING,
-    },
-    (response, status) => {
-      if (status === "OK") {
-        directionsRenderer.setDirections(response);
-      } else {
-        window.alert("Directions request failed due to " + status);
-      }
-    }
-  );
+ var start = document.getElementById('start').value;
+ var end = document.getElementById('end').value;
+ var request = {
+	 origin: globalOrigin,
+	 destination: globalEnd,
+	 travelMode: 'DRIVING'
+ };
+ directionsService.route(request, function(result, status) {
+	 if (status == 'OK') {
+		 directionsRenderer.setDirections(result);
+	 } else {
+	 alert("Route was not successful for the following reason: " + status);
+	 }
+ });
 }
 
 function initMap(){
@@ -108,7 +108,6 @@ function initMap(){
 	const onChangeHandler = function () {
 		calculateAndDisplayRoute(directionsService, directionsRenderer);
 	};
-	document.getElementById("start").addEventListener("change", onChangeHandler);
+	document.getElementById("submit").addEventListener("click", onChangeHandler);
 	document.getElementById("end").addEventListener("change", onChangeHandler);
 }
-
