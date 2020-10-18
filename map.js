@@ -2,7 +2,12 @@
 //the geocode result of the search bar so that they can be used in calculateAndDisplayRoute funtion
 var globalOrigin;
 var globalEnd;
-
+var places;
+var infoWindow;
+var markers = [];
+var currentLoc;
+var tempVar;
+var map;
 //create a marker for the map
 function setMarker(pos, map){
 	var marker = new google.maps.Marker({
@@ -25,7 +30,8 @@ function getUserLoc(geocoder, map){
         	// got the lattitude and longitude
         	var latLng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
 					globalOrigin = new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
-            map.setCenter(latLng);
+					tempVar = { lat: parseFloat(position.coords.latitude), lng: parseFloat(position.coords.longitude)};
+					  //map.setCenter(latLng);
             geocoder.geocode({ location: latLng }, (results, status) => {
 			    if (status === "OK") {
 			      if (results[0]) {
@@ -84,7 +90,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 }
 
 function initMap(){
-	var map;
+//	var map;
 	const directionsService = new google.maps.DirectionsService();
 	const directionsRenderer = new google.maps.DirectionsRenderer();
 
@@ -96,6 +102,7 @@ function initMap(){
 		zoomControl: false
 	}
 	geocoder = new google.maps.Geocoder();
+//	tempVar = new google.maps.Map(document.getElementById("map"), mapOptions);
 	map = new google.maps.Map(document.getElementById("map"), mapOptions);
 	getUserLoc(geocoder,map)
 
@@ -110,4 +117,109 @@ function initMap(){
 	};
 	document.getElementById("submit").addEventListener("click", onChangeHandler);
 	document.getElementById("end").addEventListener("change", onChangeHandler);
+	//const service = new google.maps.places.PlacesService(map);
+  let getNextPage;
+  const moreButton = document.getElementById("more");
+  moreButton.onclick = function () {
+    moreButton.disabled = true;
+
+    if (getNextPage) {
+      getNextPage();
+    }
+  };
+
+	document.getElementById("Hotels").addEventListener("click", () => {
+	  searchLodging();
+	});
+	document.getElementById("Entertainment").addEventListener("click", () => {
+	  searchEntertainment();
+	});
+}
+
+function searchLodging(){
+	const service = new google.maps.places.PlacesService(map);
+	const pyrmont = { lat: 42.8864, lng: -78.8784};
+  service.nearbySearch(
+    { location: pyrmont, radius: 3280, type: "lodgings" },
+    (results, status, pagination) => {
+      if (status !== "OK"){
+				return;
+			}
+      createMarkers(results, map);
+      moreButton.disabled = !pagination.hasNextPage;
+
+      if (pagination.hasNextPage) {
+        getNextPage = pagination.nextPage;
+      }
+    }
+  );
+}
+
+function searchEntertainment(){
+	const service = new google.maps.places.PlacesService(map);
+	const pyrmont = { lat: 42.8864, lng: -78.8784};
+  service.nearbySearch(
+    { location: pyrmont, radius: 3280, type: "bar" },
+    (results, status, pagination) => {
+      if (status !== "OK"){
+				return;
+			}
+      createMarkers(results, map);
+      moreButton.disabled = !pagination.hasNextPage;
+
+      if (pagination.hasNextPage) {
+        getNextPage = pagination.nextPage;
+      }
+    }
+  );
+}
+
+// function searchLandmark(){
+// console.log('shout');
+// 	const service = new google.maps.places.PlacesService(map);
+// 	const pyrmont = { lat: 42.8864, lng: -78.8784};
+// 	console.log(tempVar);
+//   service.nearbySearch(
+//     { location: pyrmont, radius: 3280, type: "points_of_interest" },
+//     (results, status, pagination) => {
+// 			console.log('stug');
+//       if (status !== "OK"){
+// 				console.log(status);
+// 				return;
+// 			}
+//       createMarkers(results, map);
+//       moreButton.disabled = !pagination.hasNextPage;
+//
+//       if (pagination.hasNextPage) {
+//         getNextPage = pagination.nextPage;
+//       }
+//     }
+//   );
+// 	console.log("landmark");
+// }
+
+function createMarkers(places, map) {
+  const bounds = new google.maps.LatLngBounds();
+  const placesList = document.getElementById("places");
+
+  for (let i = 0, place; (place = places[i]); i++) {
+    const image = {
+      url: place.icon,
+      size: new google.maps.Size(71, 71),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(17, 34),
+      scaledSize: new google.maps.Size(25, 25),
+    };
+    new google.maps.Marker({
+      map,
+      icon: image,
+      title: place.name,
+      position: place.geometry.location,
+    });
+    const li = document.createElement("li");
+    li.textContent = place.name;
+    placesList.appendChild(li);
+    bounds.extend(place.geometry.location);
+  }
+  map.fitBounds(bounds);
 }
