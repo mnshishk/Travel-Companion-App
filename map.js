@@ -134,13 +134,16 @@ function initMap(){
 	document.getElementById("Entertainment").addEventListener("click", () => {
 	  searchEntertainment();
 	});
+	document.getElementById("Gas").addEventListener("click", () => {
+		searchGas();
+	  });
 }
 
 function searchLodging(){
 	const service = new google.maps.places.PlacesService(map);
 	const pyrmont = { lat: 42.8864, lng: -78.8784};
   service.nearbySearch(
-    { location: pyrmont, radius: 3280, type: "lodgings" },
+    { location: globalOrigin, radius: 3280, type: "lodgings" },
     (results, status, pagination) => {
       if (status !== "OK"){
 				return;
@@ -159,7 +162,7 @@ function searchEntertainment(){
 	const service = new google.maps.places.PlacesService(map);
 	const pyrmont = { lat: 42.8864, lng: -78.8784};
   service.nearbySearch(
-    { location: pyrmont, radius: 3280, type: "bar" },
+    { location: globalOrigin, radius: 3280, type: "bar" },
     (results, status, pagination) => {
       if (status !== "OK"){
 				return;
@@ -173,7 +176,25 @@ function searchEntertainment(){
     }
   );
 }
+function searchGas(){
+	const service = new google.maps.places.PlacesService(map);
+	const pyrmont = { lat: 42.8864, lng: -78.8784};
+	
+  service.nearbySearch(
+    { location: globalOrigin, radius: 1000, type: "gas_station" },
+    (results, status, pagination) => {
+      if (status !== "OK"){
+				return;
+			}
+      createMarkers(results, map);
+      moreButton.disabled = !pagination.hasNextPage;
 
+      if (pagination.hasNextPage) {
+        getNextPage = pagination.nextPage;
+      }
+    }
+  );
+}
 // function searchLandmark(){
 // console.log('shout');
 // 	const service = new google.maps.places.PlacesService(map);
