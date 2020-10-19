@@ -11,7 +11,7 @@ input[id = "L_menuicon"]+label{
 	height:20px;
 	position:fixed;
 	left:1%;
-	top:15%;
+	top:8%;
 	cursor:pointer;
 	z-index: 1;
 }
@@ -154,7 +154,7 @@ input[id="L_menuicon"]:checked + label + div + div{
 	margin: 15% auto; /* 15% from the top and centered */
 	padding: 20px;
 	border: 1px solid #888;
-	width: 80%; /* Could be more or less, depending on screen size */
+	width: 50%; /* Could be more or less, depending on screen size */
   }
 
   /* The Close Button */
@@ -225,7 +225,7 @@ input[id="L_menuicon"]:checked + label + div + div{
 	cursor: pointer;
   }
 
-	#hotel-panel {
+#hotel-panel {
   font-family: "Roboto", "sans-serif";
   line-height: 30px;
   padding-left: 10px;
