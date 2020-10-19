@@ -137,6 +137,9 @@ function initMap(){
 	document.getElementById("Gas").addEventListener("click", () => {
 		searchGas();
 	  });
+	document.getElementById("restaurants").addEventListener("click", () => {
+		searchFood();
+	});
 }
 
 function searchLodging(){
@@ -181,7 +184,26 @@ function searchGas(){
 	const pyrmont = { lat: 42.8864, lng: -78.8784};
 	
   service.nearbySearch(
-    { location: globalOrigin, radius: 1000, type: "gas_station" },
+    { location: globalOrigin, radius: 1000, type: "gas" },
+    (results, status, pagination) => {
+      if (status !== "OK"){
+				return;
+			}
+      createMarkers(results, map);
+      moreButton.disabled = !pagination.hasNextPage;
+
+      if (pagination.hasNextPage) {
+        getNextPage = pagination.nextPage;
+      }
+    }
+  );
+}
+function searchFood(){
+	const service = new google.maps.places.PlacesService(map);
+	const pyrmont = { lat: 42.8864, lng: -78.8784};
+	
+  service.nearbySearch(
+    { location: globalOrigin, radius: 3000, types:[ "restaurant", "cafe"] },
     (results, status, pagination) => {
       if (status !== "OK"){
 				return;
