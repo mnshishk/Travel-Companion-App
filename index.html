@@ -19,18 +19,18 @@
 
  	<link rel="stylesheet" href="style.css">
 	<!--this is what matters for me-->
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap"></script>
 	<script src="map.js"></script>
-
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+
 	 <!-- Google Directions API -->
 	 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 	 <script
-		 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap&libraries=&v=weekly"
+		 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap&libraries=places&v=weekly"
 		 defer
 		 ></script>
 	   <script src="./index.js"></script>
+
+
 
 	<link rel="stylesheet" type="text/css" href="./style.css" />
    <!--seach bar-->
@@ -40,7 +40,7 @@
 	  <button id="submit"><i class="fa fa-search"></i></button>
 	</div>
 
- 
+
 </head>
 <body>
 
@@ -53,10 +53,27 @@
 </label>
 <div class="left-panel">
 	<ul>
-		<li><a href="#">Route to a Gas Station</a></li>
-		<li><a href="#">Hotel Options</a></li>
-		<li><a href="#">Entertainment Options</a></li>
+		<button id="Gas">Gas Station Options<i class="fa fa-search"></i></button>
+		<button id="Hotels">Hotel Options<i class="fa fa-search"></i></button>
+		<button id="Entertainment">Entertainemnt Options<i class="fa fa-search"></i></button>
 		<li><a href="#">Food Options</a></li>
+		<li><a href="https://www.eventbrite.com/d/ny--buffalo/events/">Events</a></li>
+		<button id="myBtn"class="myBtn">Schedule</button>
+		<div id="myModal" class="modal">
+
+
+			<div class="modal-content">
+			  <div class="modal-header">
+				<span class="close">&times;</span>
+				<h2>Schedule</h2>
+			  </div>
+			  <div class="modal-body">
+				<p>stuff</p>
+
+			  <div class="modal-footer">
+				<h3>schedule</h3>
+			  </div>
+			</div>
 	</ul>
 </div>
 
@@ -65,12 +82,12 @@
 		<li><a href="#">Route to a final destination</a></li>
 		<li><a href="#">Add stop to destination</a></li>
 		<li><a href="#">Plan Multi day journey</a></li>
-	
-	
+
+
 		<button id="myBtn"class="myBtn">Map Settings</button>
 		<div id="myModal" class="modal">
 
-	
+
 			<div class="modal-content">
 			  <div class="modal-header">
 				<span class="close">&times;</span>
@@ -85,8 +102,12 @@
 				<h3>Map Settings</h3>
 			  </div>
 			</div>
+
+
+
+
 		</ul>
-		
+
 		  <script src="modal.js"></script>
 		  <script src="slide.js"></script>
 </div>
@@ -127,5 +148,11 @@
 		  <option value="los angeles, ca">Los Angeles</option>
 		</select>
 </div>
+
+<div id="hotel-panel">
+     <h2>Results</h2>
+     <ul id="places"></ul>
+     <button id="more">More results</button>
+   </div>
 </body>
 </html>
