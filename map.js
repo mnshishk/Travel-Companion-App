@@ -9,6 +9,7 @@ var currentLoc;
 var tempVar;
 var map;
 var add;
+var rangeVar = 3600;
 //create a marker for the map
 function setMarker(pos, map){
 	var marker = new google.maps.Marker({
@@ -130,7 +131,9 @@ function initMap(){
       getNextPage();
     }
   };
-
+	 document.getElementById("Range").addEventListener("click", () => {
+	 	changeRange();
+		});
 	document.getElementById("Hotels").addEventListener("click", () => {
 	  searchLodging();
 	});
@@ -146,7 +149,7 @@ function searchLodging(){
 	const service = new google.maps.places.PlacesService(map);
 	const pyrmont = { lat: 42.8864, lng: -78.8784};
   service.nearbySearch(
-    { location: globalOrigin, radius: 3280, type: "lodgings" },
+    { location: globalOrigin, radius: rangeVar, type: "lodgings" },
     (results, status, pagination) => {
       if (status !== "OK"){
 				return;
@@ -165,7 +168,7 @@ function searchEntertainment(){
 	const service = new google.maps.places.PlacesService(map);
 	const pyrmont = { lat: 42.8864, lng: -78.8784};
   service.nearbySearch(
-    { location: globalOrigin, radius: 3280, type: "bar" },
+    { location: globalOrigin, radius: rangeVar, type: "bar" },
     (results, status, pagination) => {
       if (status !== "OK"){
 			return;
@@ -182,9 +185,9 @@ function searchEntertainment(){
 function searchGas(){
 	const service = new google.maps.places.PlacesService(map);
 	const pyrmont = { lat: 42.8864, lng: -78.8784};
-	
+
   service.nearbySearch(
-    { location: globalOrigin, radius: 1000, type: "gas_station" },
+    { location: globalOrigin, radius: rangeVar, type: "gas_station" },
     (results, status, pagination) => {
       if (status !== "OK"){
 				return;
@@ -197,6 +200,12 @@ function searchGas(){
       }
     }
   );
+}
+function changeRange(){
+	var promptVar = prompt("Please enter your range 0-5000", "0");
+ if (promptVar != null) {
+	 rangeVar = parseInt(promptVar);
+ }
 }
 // function searchLandmark(){
 // console.log('shout');
