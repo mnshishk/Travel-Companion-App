@@ -8,6 +8,7 @@ var markers = [];
 var currentLoc;
 var tempVar;
 var map;
+var add;
 //create a marker for the map
 function setMarker(pos, map){
 	var marker = new google.maps.Marker({
@@ -40,7 +41,8 @@ function getUserLoc(geocoder, map){
             		var marker = setMarker(latLng, map, "You are here");
 					holder = marker;
 			        infoWin.setContent(results[0].formatted_address);
-			        infoWin.open(map, marker);
+					infoWin.open(map, marker);
+					add=results[0].formatted_address;
 			      } else {
 			        window.alert("No results found");
 			      }
