@@ -28,9 +28,6 @@
 		 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhPu8sdaLfogQrSIl6FJQ-J0jVxlkIWF4&callback=initMap&libraries=places&v=weekly"
 		 defer
 		 ></script>
-	   <script src="./index.js"></script>
-
-
 
 	<link rel="stylesheet" type="text/css" href="./style.css" />
    <!--seach bar-->
@@ -39,7 +36,6 @@
 	  <input type="textbox" id="address" placeholder="Search..." name="search">
 	  <button id="submit"><i class="fa fa-search"></i></button>
 	</div>
-
 
 </head>
 <body>
@@ -56,10 +52,10 @@
 		<button id="Gas">Gas Station Options<i class="fa fa-search"></i></button>
 		<button id="Hotels">Hotel Options<i class="fa fa-search"></i></button>
 		<button id="Entertainment">Entertainemnt Options<i class="fa fa-search"></i></button>
-		<li><a href="#">Food Options</a></li>
+		<button id="Food">Food Options<i class="fa fa-search"></i></button>
 		<li><a href="https://www.eventbrite.com/d/ny--buffalo/events/">Events</a></li>
 		<button id="myBtn"class="myBtn">Schedule</button>
-    <button id="Range">Range Options<i class="fa fa-search"></i></button>
+   		<button id="Range">Range Options<i class="fa fa-search"></i></button>
 		<div id="myModal" class="modal">
 
 
@@ -113,7 +109,7 @@
 
 
  <!-- Menu options for the map -->
-<div id="floating-panel">
+<div id="floating-panel" style="display: none;">
 		<b>Start: </b>
 		<select id="start">
 		  <option value="buffalo, ny">Buffalo</option>
@@ -148,10 +144,10 @@
 		</select>
 </div>
 
-<div id="hotel-panel">
-     <h2>Results</h2>
-     <ul id="places"></ul>
-     <button id="more">More results</button>
-   </div>
+	<div id="hotel-panel">
+		<h2>Results</h2>
+		<ul id="places"></ul>
+		<button id="more">More results</button>
+   	</div>
 </body>
 </html>

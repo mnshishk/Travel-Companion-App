@@ -1,3 +1,7 @@
+body{
+	overflow: hidden;
+}
+
 #map {
 	height: 100vh;
 	width: 100%;
@@ -220,7 +224,7 @@ input[id="L_menuicon"]:checked + label + div + div{
   	position: fixed;
 	padding: 6px 10px;
 	background: #ddd;
-	width:7.77%;
+	width:8%;
 	font-size: 17px;
 	border: none;
 	cursor: pointer;
@@ -288,4 +292,8 @@ li:nth-child(odd) {
 #more {
   width: 100%;
   margin: 5px 0 0 0;
+}
+
+.schedBtn{
+	/*width: 25%;*/
 }
