@@ -13,6 +13,7 @@ var rangeVar = 3600;
 var directionsService;
 var directionsRenderer;
 
+
 //create a marker for the map
 function setMarker(pos, map){
 	var marker = new google.maps.Marker({
@@ -79,19 +80,34 @@ function geocodeAddress(geocoder) {
 
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer, end) {
+	 const waypts = [];
+	 const checkboxArray = document.getElementById("waypoints");
+
+	 for (let i = 0; i < checkboxArray.length; i++) {
+	 if (checkboxArray.options[i].selected) {
+		 waypts.push({
+			 location: checkboxArray[i].value,
+			 stopover: true,
+		 });
+	 }
+ }
 	var request = {
 	 origin: globalOrigin,
 	 destination: end,
+	 waypoints: waypts,
+   optimizeWaypoints: true,
 	 travelMode: 'DRIVING'
 	};
 
 	directionsService.route(request, function(result, status) {
 	 if (status == 'OK') {
 		directionsRenderer.setDirections(result);
+		const route = response.routes[0];
 	 } else {
 	 	alert("Route was not successful for the following reason: " + status);
 	 }
 	});
+
 }
 
 function initMap(){
@@ -211,7 +227,7 @@ function searchGas(){
 function searchFood(){
 	const service = new google.maps.places.PlacesService(map);
 	const pyrmont = { lat: 42.8864, lng: -78.8784};
-	
+
   service.nearbySearch(
     { location: globalOrigin, radius: 3000, types:[ "restaurant", "cafe"] },
     (results, status, pagination) => {

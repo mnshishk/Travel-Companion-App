@@ -249,8 +249,41 @@ input[id="L_menuicon"]:checked + label + div + div{
   font-size: 12px;
 }
 
+#Bottom-panel {
+  font-family: "Roboto", "sans-serif";
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+#Bottom-panel select,
+#Bottom-panel input {
+  font-size: 15px;
+}
+
+#Bottom-panel select {
+  width: 100%;
+}
+
+#Bottom-panel i {
+  font-size: 12px;
+}
+
+#Bottom-panel {
+	font-family: Arial, Helvetica, sansri-serif;
+  position: absolute;
+  left: 5px;
+  top: 60%;
+  margin-top: -195px;
+  height: 330px;
+  width: 200px;
+  padding: 5px;
+  z-index: 5;
+  border: 1px solid #999;
+  background: #fff;
+}
+
 #hotel-panel {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sansri-serif;
   position: absolute;
   right: 5px;
   top: 60%;
