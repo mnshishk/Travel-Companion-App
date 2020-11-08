@@ -13,7 +13,6 @@ var rangeVar = 3600;
 var directionsService;
 var directionsRenderer;
 
-
 //create a marker for the map
 function setMarker(pos, map){
 	var marker = new google.maps.Marker({
@@ -76,7 +75,7 @@ function geocodeAddress(geocoder) {
 		alert("Geocode was not successful for the following reason: " + status);
 	  }
 	});
-}
+}d
 
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer, end) {
@@ -376,3 +375,11 @@ function addToSchedule(placeLoc, placeName){
 		mainElement.remove();
 	})
 }
+function traffic(){
+	const trafficLayer = new google.maps.TrafficLayer();
+	trafficLayer.setMap(map);
+}
+function removeTraffic(){
+	initMap();
+}
+
