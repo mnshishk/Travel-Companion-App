@@ -81,6 +81,7 @@ function geocodeAddress(geocoder) {
 function calculateAndDisplayRoute(directionsService, directionsRenderer, end) {
 	 const waypts = [];
 	 const checkboxArray = document.getElementById("waypoints");
+	 const selectedMode = document.getElementById("mode").value;
 
 	 for (let i = 0; i < checkboxArray.length; i++) {
 	 if (checkboxArray.options[i].selected) {
@@ -95,7 +96,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, end) {
 	 destination: end,
 	 waypoints: waypts,
    optimizeWaypoints: true,
-	 travelMode: 'DRIVING'
+	 travelMode: google.maps.TravelMode[selectedMode]
 	};
 
 	directionsService.route(request, function(result, status) {
@@ -131,6 +132,10 @@ function initMap(){
 	document.getElementById("submit").addEventListener("click", () => {
 	  geocodeAddress(geocoder, map);
 	});
+	calculateAndDisplayRoute(directionsService, directionsRenderer);
+  	document.getElementById("mode").addEventListener("change", () => {
+    calculateAndDisplayRoute(directionsService, directionsRenderer);
+  });
 
 	const onChangeHandler = function () {
 		calculateAndDisplayRoute(directionsService, directionsRenderer, globalEnd);
