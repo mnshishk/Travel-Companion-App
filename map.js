@@ -140,14 +140,14 @@ function initMap(){
 	document.getElementById("end").addEventListener("change", onChangeHandler);
 
 	//const service = new google.maps.places.PlacesService(map);
-	let getNextPage;
-	const moreButton = document.getElementById("more");
-	moreButton.onclick = function () {
-		moreButton.disabled = true;
-		if (getNextPage) {
-		  getNextPage();
-		}
-	};
+	// let getNextPage;
+	// const moreButton = document.getElementById("more");
+	// moreButton.onclick = function () {
+	// 	moreButton.disabled = true;
+	// 	if (getNextPage) {
+	// 	  getNextPage();
+	// 	}
+	// };
 	document.getElementById("Range").addEventListener("click", () => {
 	 	changeRange();
 	});
@@ -163,6 +163,9 @@ function initMap(){
 	document.getElementById("Food").addEventListener("click", () => {
 	  searchFood();
 	});
+	document.getElementById("Delete").addEventListener("click", () => {
+		deleteMarkers();
+	});
 
 }
 
@@ -176,11 +179,12 @@ function searchLodging(){
 				return;
 			}
       createMarkers(results, map);
-      moreButton.disabled = !pagination.hasNextPage;
-
-      if (pagination.hasNextPage) {
-        getNextPage = pagination.nextPage;
-      }
+			setMapOnAll(map);
+      // moreButton.disabled = !pagination.hasNextPage;
+			//
+      // if (pagination.hasNextPage) {
+      //   getNextPage = pagination.nextPage;
+      // }
     }
   );
 }
@@ -195,11 +199,12 @@ function searchEntertainment(){
 			return;
 		}
       createMarkers(results, map);
-      moreButton.disabled = !pagination.hasNextPage;
-
-      if (pagination.hasNextPage) {
-        getNextPage = pagination.nextPage;
-      }
+			setMapOnAll(map);
+      // moreButton.disabled = !pagination.hasNextPage;
+			//
+      // if (pagination.hasNextPage) {
+      //   getNextPage = pagination.nextPage;
+      // }
     }
   );
 }
@@ -215,11 +220,12 @@ function searchGas(){
 			return;
 		}
       createMarkers(results, map);
-      moreButton.disabled = !pagination.hasNextPage;
-
-      if (pagination.hasNextPage) {
-        getNextPage = pagination.nextPage;
-      }
+			setMapOnAll(map);
+      // moreButton.disabled = !pagination.hasNextPage;
+			//
+      // if (pagination.hasNextPage) {
+      //   getNextPage = pagination.nextPage;
+      // }
     }
   );
 }
@@ -235,11 +241,12 @@ function searchFood(){
 				return;
 			}
       createMarkers(results, map);
-      moreButton.disabled = !pagination.hasNextPage;
-
-      if (pagination.hasNextPage) {
-        getNextPage = pagination.nextPage;
-      }
+			setMapOnAll(map);
+      // moreButton.disabled = !pagination.hasNextPage;
+			//
+      // if (pagination.hasNextPage) {
+      //   getNextPage = pagination.nextPage;
+      // }
     }
   );
 }
@@ -286,26 +293,56 @@ function createMarkers(places, map) {
       anchor: new google.maps.Point(17, 34),
       scaledSize: new google.maps.Size(25, 25),
     };
-    var marker = new google.maps.Marker({
-      map,
-      icon: image,
-      title: place.name,
-      position: place.geometry.location,
-    });
-   	marker.addListener("click", () => {
-   		addToSchedule(place.geometry.location, place.name);
-   		alert("Added the place to the schedule!")
-   	})
 
-    const li = document.createElement("li");
-    li.textContent = place.name;
-    placesList.appendChild(li);
-    bounds.extend(place.geometry.location);
+		addMarker(place.geometry.location,image,place.name)
+   	// marker.addListener("click", () => {
+   	// 	addToSchedule(place.geometry.location, place.name);
+   	// 	alert("Added the place to the schedule!")
+   	// })
+    // const li = document.createElement("li");
+    // li.textContent = place.name;
+		// li.setAttribute("class", "Result element");
+    // placesList.appendChild(li);
+     bounds.extend(place.geometry.location);
 
   }
   map.fitBounds(bounds);
 }
 
+function addMarker(location,image,name) {
+     var marker = new google.maps.Marker({
+       map,
+      icon: image,
+      title: name,
+       position: location,
+     });
+		marker.addListener("click", () => {
+   		addToSchedule(location, name);
+   		alert("Added the place to the schedule!")
+   	})
+  markers.push(marker);
+}
+
+function setMapOnAll(map) {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
+
+function deleteMarkers() {
+	setMapOnAll(null);
+  markers = [];
+//	removeFromResults();
+}
+
+function removeFromResults(){
+	var result = document.getElementById('places');
+	// for(var i=0; i < result.length; i++){
+	// 	console.log(result[i]);
+	// 	result[i].parentNode.removeChild(result[i]);
+	// }
+	result.remove();
+}
 function addToSchedule(placeLoc, placeName){
 	var schedule = document.getElementById("schedule");
 	var mainElement = document.createElement("div");
