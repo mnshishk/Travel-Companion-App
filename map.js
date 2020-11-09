@@ -75,7 +75,7 @@ function geocodeAddress(geocoder) {
 		alert("Geocode was not successful for the following reason: " + status);
 	  }
 	});
-}d
+}
 
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer, end) {
