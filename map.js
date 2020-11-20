@@ -95,7 +95,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, end) {
 	 origin: globalOrigin,
 	 destination: end,
 	 waypoints: waypts,
-   optimizeWaypoints: true,
+   	 optimizeWaypoints: true,
 	 travelMode: google.maps.TravelMode[selectedMode]
 	};
 
@@ -143,15 +143,6 @@ function initMap(){
 	document.getElementById("submit").addEventListener("click", onChangeHandler);
 	document.getElementById("end").addEventListener("change", onChangeHandler);
 
-	//const service = new google.maps.places.PlacesService(map);
-	// let getNextPage;
-	// const moreButton = document.getElementById("more");
-	// moreButton.onclick = function () {
-	// 	moreButton.disabled = true;
-	// 	if (getNextPage) {
-	// 	  getNextPage();
-	// 	}
-	// };
 	document.getElementById("Range").addEventListener("click", () => {
 	 	changeRange();
 	});
@@ -224,7 +215,7 @@ function searchGas(){
 			return;
 		}
       createMarkers(results, map);
-			setMapOnAll(map);
+	  setMapOnAll(map);
       // moreButton.disabled = !pagination.hasNextPage;
 			//
       // if (pagination.hasNextPage) {
@@ -245,7 +236,7 @@ function searchFood(){
 				return;
 			}
       createMarkers(results, map);
-			setMapOnAll(map);
+	  setMapOnAll(map);
       // moreButton.disabled = !pagination.hasNextPage;
 			//
       // if (pagination.hasNextPage) {
@@ -307,7 +298,7 @@ function createMarkers(places, map) {
     // li.textContent = place.name;
 		// li.setAttribute("class", "Result element");
     // placesList.appendChild(li);
-     bounds.extend(place.geometry.location);
+    bounds.extend(place.geometry.location);
 
   }
   map.fitBounds(bounds);
@@ -335,7 +326,7 @@ function setMapOnAll(map) {
 
 function deleteMarkers() {
 	setMapOnAll(null);
-  markers = [];
+    markers = [];
 //	removeFromResults();
 }
 
@@ -378,6 +369,7 @@ function addToSchedule(placeLoc, placeName){
 
 	remove.addEventListener("click", () => {
 		mainElement.remove();
+		directionsRenderer.set('directions', null);
 	})
 }
 function traffic(){
@@ -387,4 +379,3 @@ function traffic(){
 function removeTraffic(){
 	initMap();
 }
-
