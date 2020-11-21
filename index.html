@@ -87,8 +87,13 @@
 	<ul>
 		<li><a href="https://www.google.com/search?q=weather&sourceid=opera&ie=UTF-8&oe=UTF-8">Current Weather</a></li>
 		<li><a href="#">Plan Multi day journey</a></li>
-		<button onclick="traffic()" id="Traffic">Traffic</button>
-		<button onclick="removeTraffic()" id="Traffic">Remove Traffic</button>
+		<li>Traffic
+		<label class="switch">
+			<input id="traffic" type="checkbox" onclick="traffic()">
+			<span class="slider round"></span>
+		  </label>
+		</li>
+		<li><button onclick="reset()" id="pbutton">Reset Map</button></li>
 
 
 		<button id="myBtn"class="myBtn">Map Settings</button>

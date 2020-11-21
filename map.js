@@ -12,7 +12,7 @@ var add;
 var rangeVar = 3600;
 var directionsService;
 var directionsRenderer;
-
+var trafficLayer;
 //create a marker for the map
 function setMarker(pos, map){
 	var marker = new google.maps.Marker({
@@ -114,7 +114,7 @@ function initMap(){
 //	var map;
 	directionsService = new google.maps.DirectionsService();
 	directionsRenderer = new google.maps.DirectionsRenderer();
-
+    trafficLayer = new google.maps.TrafficLayer();
 	// mapOptions control the overall appearance of the map
 	var mapOptions = {
 		zoom: 15,
@@ -373,9 +373,19 @@ function addToSchedule(placeLoc, placeName){
 	})
 }
 function traffic(){
-	const trafficLayer = new google.maps.TrafficLayer();
-	trafficLayer.setMap(map);
+	var t = document.getElementById("traffic");
+	t.addEventListener('change', function () {
+		if (t.checked) {
+		  trafficLayer.setMap(map);
+		} else {
+
+		  trafficLayer.setMap(null);
+		}
+	  });
 }
 function removeTraffic(){
+	trafficLayer.setMap(null);
+}
+function reset(){
 	initMap();
 }
