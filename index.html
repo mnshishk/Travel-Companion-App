@@ -30,15 +30,14 @@
 		 ></script>
 
 	<link rel="stylesheet" type="text/css" href="./style.css" />
-   <!--seach bar-->
-   <div class="search">
-	<script src="search.js"></script>
-	  <input type="textbox" id="address" placeholder="Search..." name="search">
-	  <button id="submit"><i class="fa fa-search"></i></button>
+   	<!--seach bar-->
+   	<div class="search">
+		<input type="textbox" id="address" placeholder="Search..." name="search">
+		<button id="submit"><i class="fa fa-search"></i></button>
 	</div>
 
 </head>
-<body>
+<body style="overflow:hidden">
 
 <div id="map"></div>
 <div id="mode-panel">
@@ -55,6 +54,9 @@
 	<span></span>
 	<span></span>
 	<span></span>
+	<div id="menu_title">
+		<b>Menu</b>
+	</div>
 </label>
 <div class="left-panel">
 	<ul>
@@ -65,7 +67,7 @@
 	   <button id ="Events"><a href="https://www.eventbrite.com/d/ny--buffalo/events/">Events Options</a><i class="fa fa-search"></i></button>
 		<button id="myBtn">Schedule<i class="fa fa-search"></i></button>
    		<button id="Range">Range Options<i class="fa fa-search"></i></button>
-      <button id="Delete">Clear Markers<i class="fa fa-search"></i></button>
+      	<button id="Delete">Clear Markers<i class="fa fa-search"></i></button>
 		<div id="myModal" class="modal">
 
 

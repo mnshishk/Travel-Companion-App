@@ -3,7 +3,7 @@
 }
 
 #map {
-	height: 100vh;
+	height: 98.6vh;
 	width: 100%;
 }
 input[id = "L_menuicon"]{
@@ -15,7 +15,7 @@ input[id = "L_menuicon"]+label{
 	height:20px;
 	position:fixed;
 	left:1%;
-	top:15%;
+	top:.8%;
 	cursor:pointer;
 	z-index: 1;
 }
@@ -56,8 +56,10 @@ input[id = "L_menuicon"]:checked + label span:nth-child(3){
 	bottom: 30vh;
 	height: 50vh;
 	padding: 0 5px;
+	padding-top: 7%;
+	padding-left: 15px;
 	left:-200px;
-	background-color: #1b1b1b;
+	background-color: #ffffff;
 	z-index: 1000;
 	transition:all .35s;
 }
@@ -87,8 +89,9 @@ input[id="L_menuicon"]:checked + label + div{
 	bottom: 30vh;
 	height: 50vh;;
 	padding: 0 5px;
+	padding-top: 7%; 
 	right: -220px;
-	background-color: #1b1b1b;
+	background-color: #ffffff;
 	z-index: 1000;
 	transition:all .35s;
 }
@@ -229,6 +232,11 @@ input[id="L_menuicon"]:checked + label + div + div{
 	border: none;
 	cursor: pointer;
   }
+
+.search {
+	width: 91%;
+	float: right;
+}
 
 #hotel-panel {
   font-family: "Roboto", "sans-serif";
@@ -406,4 +414,15 @@ li:nth-child(odd) {
   
   .slider.round:before {
 	border-radius: 50%;
+  }
+
+  #menu_title {
+  	position: fixed;
+  	padding-left: 40px;
+  	width: 50px;
+  	height: 25px;
+  	top: 7px;
+  	left: 20px;
+  	font-size: 17px;
+  	z-index: 12;
   }
