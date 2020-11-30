@@ -89,7 +89,7 @@ input[id="L_menuicon"]:checked + label + div{
 	bottom: 30vh;
 	height: 50vh;;
 	padding: 0 5px;
-	padding-top: 7%; 
+	padding-top: 7%;
 	right: -220px;
 	background-color: #ffffff;
 	z-index: 1000;
@@ -279,10 +279,10 @@ input[id="L_menuicon"]:checked + label + div + div{
 #Bottom-panel {
 	font-family: Arial, Helvetica, sansri-serif;
   position: absolute;
-  left: 5px;
+  left: 1125px;
   top: 60%;
   margin-top: -195px;
-  height: 330px;
+  height: 230px;
   width: 200px;
   padding: 5px;
   z-index: 5;
@@ -357,14 +357,14 @@ li:nth-child(odd) {
 	width: 60px;
 	height: 34px;
   }
-  
+
   /* Hide default HTML checkbox */
   .switch input {
 	opacity: 0;
 	width: 0;
 	height: 0;
   }
-  
+
   /* The slider */
   .slider {
 	position: absolute;
@@ -377,7 +377,7 @@ li:nth-child(odd) {
 	-webkit-transition: .4s;
 	transition: .4s;
   }
-  
+
   .slider:before {
 	position: absolute;
 	content: "";
@@ -390,15 +390,15 @@ li:nth-child(odd) {
 	-webkit-transition: .4s;
 	transition: .4s;
   }
-  
+
   input:checked + .slider {
 	background-color: #2196F3;
   }
-  
+
   input:focus + .slider {
 	box-shadow: 0 0 1px #2196F3;
   }
-  
+
   input:checked + .slider:before {
 	-webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
@@ -406,12 +406,12 @@ li:nth-child(odd) {
     -moz-transform: translateX(26px);
     transform: translateX(26px);
   }
-  
+
   /* Rounded sliders */
   .slider.round {
 	border-radius: 34px;
   }
-  
+
   .slider.round:before {
 	border-radius: 50%;
   }

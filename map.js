@@ -131,6 +131,7 @@ function initMap(){
 
 	document.getElementById("submit").addEventListener("click", () => {
 	  geocodeAddress(geocoder, map);
+
 	});
 	calculateAndDisplayRoute(directionsService, directionsRenderer);
   	document.getElementById("mode").addEventListener("change", () => {
@@ -386,6 +387,19 @@ function traffic(){
 function removeTraffic(){
 	trafficLayer.setMap(null);
 }
+
+function waypointDisplay() {
+  var x = document.getElementById("Bottom-panel");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+
+
 function reset(){
 	initMap();
 }
