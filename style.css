@@ -53,10 +53,9 @@ input[id = "L_menuicon"]:checked + label span:nth-child(3){
 
 .left-panel {
 	position: fixed;
-	bottom: 30vh;
-	height: 50vh;
+	bottom: -6vh;
+	height: 100%;
 	padding: 0 5px;
-	padding-top: 7%;
 	padding-left: 15px;
 	left:-200px;
 	background-color: #ffffff;
@@ -74,8 +73,9 @@ input[id = "L_menuicon"]:checked + label span:nth-child(3){
 }
 
 .left-panel ul li a{
+	color: black;
 	display: block;
-	height: 60px;
+	height: 50px;
 	padding: 0 10px;
 	text-decoration: none;
 }
@@ -86,8 +86,8 @@ input[id="L_menuicon"]:checked + label + div{
 
 .right-panel {
 	position: fixed;
-	bottom: 30vh;
-	height: 50vh;;
+	bottom: -13vh;
+	height: 100%;
 	padding: 0 5px;
 	padding-top: 7%;
 	right: -220px;
@@ -106,8 +106,9 @@ input[id="L_menuicon"]:checked + label + div{
 }
 
 .right-panel ul li a{
+	color: black;
 	display: block;
-	height: 50px;
+	height: 20px;
 	padding: 0 10px;
 	text-decoration: none;
 }
@@ -315,7 +316,6 @@ ul {
   margin: 0;
   height: 271px;
   width: 200px;
-  overflow-y: scroll;
 }
 
 li {
@@ -331,7 +331,7 @@ li:nth-child(odd) {
 }
 #mode-panel {
   position: absolute;
-  top: 40px;
+  top: 37px;
   right: 0%;
   z-index: 5;
   background-color: #fff;
