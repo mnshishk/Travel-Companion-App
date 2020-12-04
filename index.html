@@ -34,7 +34,9 @@
    	<div class="search">
 		<input type="textbox" id="address" placeholder="Search..." name="search">
 		<button id="submit"><i class="fa fa-search"></i></button>
+		<script src ="https://kit.fontawesome.com/a076d05399.js"></script>
 	</div>
+
 
 </head>
 <body style="overflow:hidden">
@@ -58,19 +60,22 @@
 		<b>Menu</b>
 	</div>
 </label>
-<div class="left-panel">
-	<ul>
-		<li id="Gas"><a href= "#">Gas Station Options<i class="fa fa-search"></i></a></li>
-		<li id="Hotels"><a href= "#">Hotel Options<i class="fa fa-search"></i></a></li>
-		<li id="Entertainment"><a href= "#">Entertainemnt Options<i class="fa fa-search"></i></a></li>
-		<li id="Food"><a href= "#">Food Options<i class="fa fa-search"></i></a></li>
-	   <li id ="Events"><a href="https://www.eventbrite.com/d/ny--buffalo/events/">Events Options<i class="fa fa-search"></i></a></li>
-		<li id="myBtn"><a href= "#">Schedule<i class="fa fa-search"></i></a></li>
-   		<li id="Range"><a href= "#">Range Options<i class="fa fa-search"></i></a></li>
-      	<li id="Delete"><a href= "#">Clear Markers<i class="fa fa-search"></i></a></li>
+	<div class="left-panel">
+		<ul>
+		<li><a href="#" class = "feat-btn">Options <span class="fas fa-angle-down"></span></a></li>
+		<li>
+		<ul class= "feat-show">
+				<li id="Gas"><a href= "#"><i class="fas fa-gas-pump"></i>  Gas Station</a></li>
+				<li id="Hotels"><a href= "#"><i class="fas fa-hotel"></i>  Hotel</a></li>
+				<li id="Entertainment"><a href= "#"><i class="fas fa-dice-d6"></i> Entertainemnt</a></li>
+				<li id="Food"><a href= "#"><i class="fa fa-utensils"></i>  Food</a></li>
+		</ul>
+	</li>
+	   <li id ="Events"><a href="https://www.eventbrite.com/d/ny--buffalo/events/"><i class="fas fa-calendar-alt"></i> Events </a></li>
+		<li id="myBtn"><a href= "#"><i class="fas fa-clipboard-list"></i>   Schedule</a></li>
+   		<li id="Range"><a href= "#"><i class="fas fa-expand-arrows-alt"></i> Range </a></li>
+      	<li id="Delete"><a href= "#"><i class="fas fa-eraser"></i> Clear Markers</a></li>	
 		<div id="myModal" class="modal">
-
-
 			<div class="modal-content">
 			  <div class="modal-header">
 				<span class="close">&times;</span>
@@ -85,26 +90,29 @@
 	</ul>
 </div>
 
+
 <div class="right-panel">
 	<ul>
 		<li><a href="https://www.google.com/search?q=weather&sourceid=opera&ie=UTF-8&oe=UTF-8">Current Weather</a></li>
-    <li>Show Waypoints
+    	<li><a href = "#">Show Waypoints
 		<label class="button">
 			<input id="waypointON" type="checkbox" onclick="waypointDisplay()">
 		  </label>
+		</a>
 		</li>
 
 
-		<li>Traffic
+		<li><a href = "#">Traffic
 		<label class="switch">
 			<input id="traffic" type="checkbox" onclick="traffic()">
 			<span class="slider round"></span>
 		  </label>
+		</a>
 		</li>
-		<li><button onclick="reset()" id="pbutton">Reset Map</button></li>
+		<li onclick="reset()" id="pbutton"><a href = "#">Reset Map</a></li>
 
 
-		<button id="myBtn"class="myBtn">Map Settings</button>
+		<li id="myBtn"class="myBtn"><a href = "#">Map Settings</a></li>
 
 
 		<div id="myModal" class="modal">
@@ -133,6 +141,7 @@
 		  <script src="modal.js"></script>
 		  <script src="slide.js"></script>
 </div>
+
 
 
  <!-- Menu options for the map -->
@@ -189,7 +198,11 @@
         <input type="submit" id="submit" />
       </div>
 
-
+<script>
+	$('.feat-btn').click(function(){
+		$('.left-panel ul .feat-show').toggleClass("show");
+	});
+</script>
 
 
 </body>

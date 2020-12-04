@@ -55,29 +55,69 @@ input[id = "L_menuicon"]:checked + label span:nth-child(3){
 	position: fixed;
 	bottom: -6vh;
 	height: 100%;
-	padding: 0 5px;
-	padding-left: 15px;
+	padding-left: 0px;
 	left:-200px;
-	background-color: #ffffff;
+	background-color: #1b1b1b;
 	z-index: 1000;
 	transition:all .35s;
 }
 .left-panel ul {
-	padding-top: 15px;
+	background: #1b1b1b;
+	padding-top: 10px;
 
 }
 
 .left-panel ul li{
-	line-height: 50px;
+	background: #1b1b1b;
+	line-height: 30px;
 	list-style: none;
 }
 
 .left-panel ul li a{
-	color: black;
+	position: relative;
+	color: white;
 	display: block;
-	height: 50px;
-	padding: 0 10px;
+	padding-left: 10px;
+	height: 30px;
 	text-decoration: none;
+	border-left: 3px solid transparent;
+}
+
+.left-panel ul li a:hover{
+		color: #43CBFF;
+		background: #1e1e1e;
+		border-left-color: #43CBFF;
+}
+.left-panel ul ul{
+	position: static;
+	display: none;
+}
+
+.left-panel ul ul.feat-show.show{
+	display: block;
+}
+
+.left-panel ul ul li{
+	line-height: 30px;
+	border-bottom: none;
+}
+
+.left-panel ul ul li a{
+	font-size: 12px;
+	padding-left: 20px;
+}
+
+.left-panel ul li a span{
+	position: absolute;
+	right: 15px;
+	top:50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+	transition: transform 0.4s;
+}
+
+.left-panel ul li a:hover span{
+	transform: translateY(-50%) rotate(-180deg);
 }
 
 input[id="L_menuicon"]:checked + label + div{
@@ -88,30 +128,38 @@ input[id="L_menuicon"]:checked + label + div{
 	position: fixed;
 	bottom: -13vh;
 	height: 100%;
-	padding: 0 5px;
-	padding-top: 7%;
+	padding-top: 0%;
 	right: -220px;
-	background-color: #ffffff;
+	background-color: #1b1b1b;
 	z-index: 1000;
 	transition:all .35s;
 }
 
 .right-panel ul {
-	padding-top: 5px;
+	background: #1b1b1b;
+	padding-top: 10px;
 	}
 
 .right-panel ul li{
-	line-height: 20px;
+	background: #1b1b1b;
+	line-height: 30px;
 	list-style: none;
 }
 
 .right-panel ul li a{
-	color: black;
+	color: white;
 	display: block;
-	height: 20px;
+	height: 30px;
 	padding: 0 10px;
 	text-decoration: none;
+	border-right: 3px solid transparent;
 }
+.right-panel ul li a:hover{
+		color: #43CBFF;
+		background: #1e1e1e;
+		border-left-color: #43CBFF;
+}
+
 input[id="L_menuicon"]:checked + label + div + div{
 	right:0;
 	}
