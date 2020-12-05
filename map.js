@@ -9,6 +9,8 @@ var currentLoc;
 var tempVar;
 var map;
 var add;
+var darkTheme;
+var dark =0;
 var rangeVar = 3600;
 var directionsService;
 var directionsRenderer;
@@ -118,7 +120,14 @@ function initMap(){
 	}
 
 	geocoder = new google.maps.Geocoder();
-	map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+	if(dark == 1){
+			map = new google.maps.Map(document.getElementById("map"), darkTheme);
+		}
+		else{
+		map = new google.maps.Map(document.getElementById("map"), mapOptions);
+	}
+	
 	getUserLoc(geocoder,map)
 
 	directionsRenderer.setMap(map);
@@ -156,7 +165,110 @@ function initMap(){
 	document.getElementById("Delete").addEventListener("click", () => {
 		deleteMarkers();
 	});
+	document.getElementById("DarkMode").addEventListener("click", () => {
+		darkMode();
+	});
+	document.getElementById("LightMode").addEventListener("click", () => {
+		lightMode();
+	});
 
+}
+
+
+function darkMode() {
+	 darkTheme = {
+		 zoom: 15,
+		 mapTypeControl: false,
+		 fullscreenControl: false,
+		 zoomControl: false,
+		styles: [
+		{ elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+		{ elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+		{ elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+		{
+			featureType: "administrative.locality",
+			elementType: "labels.text.fill",
+			stylers: [{ color: "#d59563" }],
+		},
+		{
+			featureType: "poi",
+			elementType: "labels.text.fill",
+			stylers: [{ color: "#d59563" }],
+		},
+		{
+			featureType: "poi.park",
+			elementType: "geometry",
+			stylers: [{ color: "#263c3f" }],
+		},
+		{
+			featureType: "poi.park",
+			elementType: "labels.text.fill",
+			stylers: [{ color: "#6b9a76" }],
+		},
+		{
+			featureType: "road",
+			elementType: "geometry",
+			stylers: [{ color: "#38414e" }],
+		},
+		{
+			featureType: "road",
+			elementType: "geometry.stroke",
+			stylers: [{ color: "#212a37" }],
+		},
+		{
+			featureType: "road",
+			elementType: "labels.text.fill",
+			stylers: [{ color: "#9ca5b3" }],
+		},
+		{
+			featureType: "road.highway",
+			elementType: "geometry",
+			stylers: [{ color: "#746855" }],
+		},
+		{
+			featureType: "road.highway",
+			elementType: "geometry.stroke",
+			stylers: [{ color: "#1f2835" }],
+		},
+		{
+			featureType: "road.highway",
+			elementType: "labels.text.fill",
+			stylers: [{ color: "#f3d19c" }],
+		},
+		{
+			featureType: "transit",
+			elementType: "geometry",
+			stylers: [{ color: "#2f3948" }],
+		},
+		{
+			featureType: "transit.station",
+			elementType: "labels.text.fill",
+			stylers: [{ color: "#d59563" }],
+		},
+		{
+			featureType: "water",
+			elementType: "geometry",
+			stylers: [{ color: "#17263c" }],
+		},
+		{
+			featureType: "water",
+			elementType: "labels.text.fill",
+			stylers: [{ color: "#515c6d" }],
+		},
+		{
+			featureType: "water",
+			elementType: "labels.text.stroke",
+			stylers: [{ color: "#17263c" }],
+		},
+	],
+};
+dark =1;
+initMap();
+}
+
+function lightMode(){
+	dark = 0;
+	initMap();
 }
 
 function searchLodging(){
