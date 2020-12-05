@@ -13,6 +13,7 @@ var rangeVar = 3600;
 var directionsService;
 var directionsRenderer;
 var trafficLayer;
+const waypts = [];
 //create a marker for the map
 function setMarker(pos, map){
 	var marker = new google.maps.Marker({
@@ -79,18 +80,11 @@ function geocodeAddress(geocoder) {
 
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer, end) {
-	 const waypts = [];
+
 	 const checkboxArray = document.getElementById("waypoints");
 	 const selectedMode = document.getElementById("mode").value;
 
-	 for (let i = 0; i < checkboxArray.length; i++) {
-	 if (checkboxArray.options[i].selected) {
-		 waypts.push({
-			 location: checkboxArray[i].value,
-			 stopover: true,
-		 });
-	 }
- }
+
 	var request = {
 	 origin: globalOrigin,
 	 destination: end,
@@ -395,6 +389,14 @@ function waypointDisplay() {
   } else {
     x.style.display = "none";
   }
+}
+
+function waypointIN(){
+	waypts.push({
+		 location: document.getElementById("waypoints").value,
+		 stopover: true,
+	 });
+
 }
 
 

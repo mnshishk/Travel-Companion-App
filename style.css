@@ -176,7 +176,7 @@ input[id="L_menuicon"]:checked + label + div + div{
 .bottom-panel{
 	position:fixed;
 	bottom:0;
-	left: 0;
+	left: 1125;
 	width:100%;
 	background-color: white;
 	font-size: large;
@@ -328,7 +328,7 @@ input[id="L_menuicon"]:checked + label + div + div{
 #Bottom-panel {
 	font-family: Arial, Helvetica, sansri-serif;
   position: absolute;
-  left: 1125px;
+  float; right;
   top: 60%;
   margin-top: -195px;
   height: 230px;
