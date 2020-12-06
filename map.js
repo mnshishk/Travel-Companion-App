@@ -354,7 +354,7 @@ function searchFood(){
 }
 
 function changeRange(){
-	var promptVar = prompt("Please enter your range 0-5000", "0");
+	var promptVar = prompt("Please enter your range 0-5000 meters", "0");
 	if (promptVar != null) {
 		rangeVar = parseInt(promptVar);
  }
