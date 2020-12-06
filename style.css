@@ -227,6 +227,19 @@ input[id="L_menuicon"]:checked + label + div + div{
 	text-decoration: none;
 	cursor: pointer;
   }
+  .c {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+
+  .c:hover,
+  .c:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+  }
   .slidecontainer {
 	width: 100%; /* Width of the outside container */
   }
