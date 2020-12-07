@@ -1,9 +1,9 @@
-body{
+<i class="fa fa-search"></i>body{
 	overflow: hidden;
 }
 
 #map {
-	height: 100vh;
+	height: 98.6vh;
 	width: 100%;
 }
 input[id = "L_menuicon"]{
@@ -15,7 +15,7 @@ input[id = "L_menuicon"]+label{
 	height:20px;
 	position:fixed;
 	left:1%;
-	top:15%;
+	top:.8%;
 	cursor:pointer;
 	z-index: 1;
 }
@@ -53,64 +53,119 @@ input[id = "L_menuicon"]:checked + label span:nth-child(3){
 
 .left-panel {
 	position: fixed;
-	bottom: 30vh;
-	height: 50vh;
-	padding: 0 5px;
+	bottom: -3.7vh;
+	height: 100%;
+	padding-left: 0px;
 	left:-200px;
-	background-color: #1b1b1b;
+	background-color: #ffffff;
 	z-index: 1000;
 	transition:all .35s;
 }
 .left-panel ul {
-	padding-top: 15px;
-
+	background: #ffffff;
+	padding-top: 10px;
+	height: 225px;
 }
 
 .left-panel ul li{
-	line-height: 50px;
+	background: #ffffff;
+	line-height: 30px;
 	list-style: none;
+	padding-top: 1px;
 }
 
 .left-panel ul li a{
+	position: relative;
+	color: black;
 	display: block;
-	height: 60px;
-	padding: 0 10px;
+	padding-left: 10px;
+	height: 30px;
 	text-decoration: none;
+	border-left: 3px solid transparent;
+}
+
+.left-panel ul li a:hover{
+	color: #1b1b1b;
+	background: #ffffff;
+	border-left-color: #43CBFF;
+}
+.left-panel ul ul{
+	position: static;
+	display: none;
+	height: 175px;
+}
+
+.left-panel ul ul.feat-show.show{
+	display: block;
+}
+
+.left-panel ul ul li{
+	line-height: 30px;
+	border-bottom: none;
+}
+
+.left-panel ul ul li a{
+	font-size: 12px;
+	padding-left: 20px;
+}
+
+.left-panel ul li a span{
+	position: absolute;
+	right: 15px;
+	top:50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+	transition: transform 0.4s;
+}
+
+.left-panel ul li a:hover span{
+	transform: translateY(-50%) rotate(-180deg);
 }
 
 input[id="L_menuicon"]:checked + label + div{
 	left:0;
-	}
+}
+
+input[id="L_menuicon"]:checked + label + div + div{
+	right:0;
+}
 
 .right-panel {
 	position: fixed;
-	bottom: 30vh;
-	height: 50vh;;
-	padding: 0 5px;
+	bottom: -3.7vh;
+	height: 100%;
+	padding-top: 0%;
 	right: -220px;
-	background-color: #1b1b1b;
+	background-color: #ffffff;
 	z-index: 1000;
 	transition:all .35s;
 }
 
 .right-panel ul {
-	padding-top: 5px;
+	background: #ffffff;
+	padding-top: 10px;
 	}
 
 .right-panel ul li{
-	line-height: 20px;
+	background: #ffffff;
+	line-height: 30px;
 	list-style: none;
 }
 
 .right-panel ul li a{
+	color: black;
 	display: block;
-	height: 50px;
+	height: 30px;
 	padding: 0 10px;
 	text-decoration: none;
+	border-right: 3px solid transparent;
 }
-input[id="L_menuicon"]:checked + label + div + div{
-	right:0;
-	}
+.right-panel ul li a:hover{
+	color: #1b1b1b;
+	background: #ffffff;
+	border-right-color: #43CBFF;
+}
+
 
 .top-panel{
 	position:absolute;
@@ -124,7 +179,7 @@ input[id="L_menuicon"]:checked + label + div + div{
 .bottom-panel{
 	position:fixed;
 	bottom:0;
-	left: 0;
+	left: 1125;
 	width:100%;
 	background-color: white;
 	font-size: large;
@@ -158,7 +213,7 @@ input[id="L_menuicon"]:checked + label + div + div{
 	margin: 15% auto; /* 15% from the top and centered */
 	padding: 20px;
 	border: 1px solid #888;
-	width: 50%; /* Could be more or less, depending on screen size */
+	width: 55%; /* Could be more or less, depending on screen size */
   }
 
   /* The Close Button */
@@ -171,6 +226,19 @@ input[id="L_menuicon"]:checked + label + div + div{
 
   .close:hover,
   .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  .c {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+
+  .c:hover,
+  .c:focus {
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
@@ -230,6 +298,11 @@ input[id="L_menuicon"]:checked + label + div + div{
 	cursor: pointer;
   }
 
+.search {
+	width: 90%;
+	float: right;
+}
+
 #hotel-panel {
   font-family: "Roboto", "sans-serif";
   line-height: 30px;
@@ -271,10 +344,10 @@ input[id="L_menuicon"]:checked + label + div + div{
 #Bottom-panel {
 	font-family: Arial, Helvetica, sansri-serif;
   position: absolute;
-  left: 5px;
+  float; right;
   top: 60%;
   margin-top: -195px;
-  height: 330px;
+  height: 230px;
   width: 200px;
   padding: 5px;
   z-index: 5;
@@ -307,7 +380,6 @@ ul {
   margin: 0;
   height: 271px;
   width: 200px;
-  overflow-y: scroll;
 }
 
 li {
@@ -321,9 +393,10 @@ li {
 li:nth-child(odd) {
   background-color: #fcfcfc;
 }
+
 #mode-panel {
   position: absolute;
-  top: 40px;
+  top: 37px;
   right: 0%;
   z-index: 5;
   background-color: #fff;
@@ -341,5 +414,343 @@ li:nth-child(odd) {
 }
 
 .schedBtn{
-	/*width: 25%;*/
+	background-color: white;
+	color: #1b1b1b;
+	width: 97%;
+}
+
+.schedRem {
+	background-color: white;
+	color: #1b1b1b;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+
+  /* The slider */
+  .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+
+  .slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	top:0px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+
+  input:checked + .slider {
+	background-color: #2196F3;
+  }
+
+  input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    -o-transform: translateX(26px);
+    -moz-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+	border-radius: 34px;
+  }
+
+  .slider.round:before {
+	border-radius: 50%;
+  }
+
+  #menu_title {
+  	position: fixed;
+  	padding-left: 40px;
+  	width: 50px;
+  	height: 25px;
+  	top: 7px;
+  	left: 20px;
+  	font-size: 17px;
+  	z-index: 12;
+  }
+
+  /* dark mode classes */
+
+  body.dark {
+  	background-color: #1b1b1b;
+  }
+
+  body.light {
+  	background-color: #ffffff;
+  }
+
+  #menu_title_d {
+  	position: fixed;
+  	padding-left: 40px;
+  	width: 50px;
+  	height: 25px;
+  	top: 7px;
+  	left: 20px;
+  	color: white;
+  	font-size: 17px;
+  	z-index: 12;
+  }
+
+.left-panel-dark {
+	position: fixed;
+	bottom: -3.7vh;
+	height: 100%;
+	padding-left: 0px;
+	left:-200px;
+	background-color: #1b1b1b;
+	z-index: 1000;
+	transition:all .35s;
+}
+.left-panel-dark ul {
+	background: #1b1b1b;
+	padding-top: 10px;
+	height: 225px;
+}
+
+.left-panel-dark ul li{
+	background: #1b1b1b;
+	line-height: 30px;
+	list-style: none;
+	padding-top: 1px;
+}
+
+.left-panel-dark ul li a{
+	position: relative;
+	color: white;
+	display: block;
+	padding-left: 10px;
+	height: 30px;
+	text-decoration: none;
+	border-left: 3px solid transparent;
+}
+
+.left-panel-dark ul li a:hover{
+	color: #43CBFF;
+	background: #1b1b1b;
+	border-left-color: #43CBFF;
+}
+
+.left-panel-dark ul ul{
+	position: static;
+	display: none;
+	height: 175px;
+}
+
+.left-panel-dark ul ul.feat-show.show{
+	display: block;
+}
+
+.left-panel-dark ul ul li{
+	line-height: 30px;
+	border-bottom: none;
+}
+
+.left-panel-dark ul ul li a{
+	font-size: 12px;
+	padding-left: 20px;
+}
+
+.left-panel-dark ul li a span{
+	position: absolute;
+	right: 15px;
+	top:50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+	transition: transform 0.4s;
+}
+
+.left-panel-dark ul li a:hover span{
+	transform: translateY(-50%) rotate(-180deg);
+}
+
+.right-panel-dark {
+	position: fixed;
+	bottom: -3.7vh;
+	height: 100%;
+	padding-top: 0%;
+	right: -220px;
+	background-color: #1b1b1b;
+	z-index: 1000;
+	transition:all .35s;
+}
+
+.right-panel-dark ul {
+	background: #1b1b1b;
+	padding-top: 10px;
+	}
+
+.right-panel-dark ul li{
+	background: #1b1b1b;
+	line-height: 30px;
+	list-style: none;
+}
+
+.right-panel-dark ul li a{
+	color: white;
+	display: block;
+	height: 30px;
+	padding: 0 10px;
+	text-decoration: none;
+	border-right: 3px solid transparent;
+}
+
+.right-panel-dark ul li a:hover{
+	color: #43CBFF;
+	background: #1e1e1e;
+	border-right-color: #43CBFF;
+}
+
+.md {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+    background-color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    top: 10px;
+    left: 132px;
+    position: fixed;
+    height: 15px;
+    width: 35px;
+    transform: scale(1.5);
+}
+
+.label .ball {
+	background-color: #43CBFF;
+    border-radius: 50%;
+    position: relative;
+    left: -6px;
+    height: 18px;
+    width: 18px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.md:checked + .label {
+	background-color: #1b1b1b;
+}
+
+.md:checked + .label .ball {
+    transform: translateX(17px);
+    background-color: #43CBFF;
+}
+
+.fa-moon {
+	color: #f1c40f;
+    position: fixed;
+    left: 3px;
+}
+
+.fa-sun {
+    color: #f39c12;
+    position: fixed;
+    right: 3px;
+}
+
+.search-dark input[type=textbox] {
+	color: white;
+	padding: 6px;
+	font-size: 17px;
+	width:92%;
+	border: none;
+	background-color: #1b1b1b; 
+}
+
+.search-dark button {
+	position: fixed;
+	padding: 6px 10px;
+	background: #353535;
+	width:8%;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+}
+
+.search-dark button i {
+	overflow: hidden;
+	color: #43CBFF;
+}
+
+#mode-panel-dark {
+    position: absolute;
+    top: 36px;
+    right: 0%;
+    z-index: 5;
+    color: #ffffff;
+    background-color: #1b1b1b;
+    padding: 5px;
+    border: 1px solid #1b1b1b;
+    text-align: center;
+    font-family: "Roboto", "sans-serif";
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+#mode-panel-dark #mode{
+    background-color: #1b1b1b;
+}
+
+#menu-dark span {
+	background: white;
+}
+
+/* Modal Content/Box */
+.modal-content-dark {
+	background-color: #1b1b1b;
+	color: white;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 55%; /* Could be more or less, depending on screen size */
+}
+
+.close-dark {
+	color: #ffffff;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close-dark:hover,
+.close-dark:focus {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
 }
