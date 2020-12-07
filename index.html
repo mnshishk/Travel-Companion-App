@@ -16,11 +16,9 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-
  	<link rel="stylesheet" href="style.css">
-	<!--this is what matters for me-->
 	<script src="map.js"></script>
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	 <!-- Google Directions API -->
 	 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -40,43 +38,51 @@
 
 </head>
 <body style="overflow:hidden">
-
-<div id="map"></div>
-<div id="mode-panel">
-      <b>Mode of Travel: </b>
-      <select id="mode">
-        <option value="DRIVING">Driving</option>
-        <option value="WALKING">Walking</option>
-        <option value="BICYCLING">Bicycling</option>
-        <option value="TRANSIT">Transit</option>
-      </select>
-    </div>
-<input type = "checkbox" id="L_menuicon">
-<label for = "L_menuicon">
-	<span></span>
-	<span></span>
-	<span></span>
-	<div id="menu_title">
-		<b>Menu</b>
+	<div>
+		<input type="checkbox" class="md" id="dm_button" onclick="darkMode()">
+		<label class="label" for="dm_button">
+			<i class="fas fa-moon"></i>
+			<i class="fas fa-sun"></i>
+			<div class="ball"></div>
+		</label>
 	</div>
-</label>
+
+	<div id="map"></div>
+	<div id="mode-panel">
+	    <b>Mode of Travel: </b>
+	    <select id="mode">
+	        <option value="DRIVING">Driving</option>
+	        <option value="WALKING">Walking</option>
+	        <option value="BICYCLING">Bicycling</option>
+	        <option value="TRANSIT">Transit</option>
+	    </select>
+	</div>
+	<input id="L_menuicon" type = "checkbox">
+	<label for = "L_menuicon" id="menu">
+		<span></span>
+		<span></span>
+		<span></span>
+		<div id="menu_title">
+			<b>Menu</b>
+		</div>
+	</label>
+
 	<div class="left-panel">
 		<ul>
-		<li><a href="#" class = "feat-btn">Options <span class="fas fa-angle-down"></span></a></li>
+		<li><a href="#" class="feat-btn" style="font-weight: 200">Show Places<span class="fas fa-angle-down"></span></a></li>
 		<li>
 		<ul class= "feat-show">
-				<li id="Gas"><a href= "#"><i class="fas fa-gas-pump"></i>  Gas Station</a></li>
-				<li id="Hotels"><a href= "#"><i class="fas fa-hotel"></i>  Hotel</a></li>
-				<li id="Entertainment"><a href= "#"><i class="fas fa-dice-d6"></i> Entertainemnt</a></li>
-				<li id="Food"><a href= "#"><i class="fa fa-utensils"></i>  Food</a></li>
+			<li id="Gas"><a href= "#"><i class="fas fa-gas-pump"></i>  Gas Station</a></li>
+			<li id="Hotels"><a href= "#"><i class="fas fa-hotel"></i>  Hotel</a></li>
+			<li id="Entertainment"><a href= "#"><i class="fas fa-dice-d6"></i> Entertainemnt</a></li>
+			<li id="Food"><a href= "#"><i class="fa fa-utensils"></i>  Food</a></li>
 		</ul>
 	</li>
 	   <li id ="Events"><a href="https://www.eventbrite.com/d/ny--buffalo/events/"><i class="fas fa-calendar-alt"></i> Events </a></li>
 		<li id="myBtn"><a href= "#"><i class="fas fa-clipboard-list"></i>   Schedule</a></li>
-   		<li id="Range"><a href= "#"><i class="fas fa-expand-arrows-alt"></i> Range </a></li>
-      	<li id="Delete"><a href= "#"><i class="fas fa-eraser"></i> Clear Markers</a></li>
-        <li id="DarkMode"><a href= "#"><i class="fa fa-circle-o-notch"></i> Dark Mode</a></li>
-        <li id="LightMode"><a href= "#"><i class="fa fa-circle"></i> Light Mode</a></li>
+   		<li id="Range"><a href= "#"><i class="fas fa-expand-arrows-alt"></i> Proximity </a></li>
+      	<li id="Delete"><a href= "#"><i class="fas fa-eraser"></i> Clear Markers</a></li>	
+      	<li><a href= "#" onclick="clearRoute()"><i class="fas fa-eraser"></i> Clear Current Route</a></li>	
 		<div id="myModal" class="modal">
 			<div class="modal-content">
 			  <div class="modal-header">
@@ -84,6 +90,7 @@
 				<h2>Schedule</h2>
 			  </div>
 			  <div id="schedule"class="modal-body">
+			  	<p class="schedBtn schedRem"></p>
 			  </div>
 			  <div class="modal-footer">
 				<h3></h3>
@@ -105,12 +112,11 @@
 
 
 		<li><a href = "#">Traffic
-		<label class="switch">
+		  <label class="switch">
 			<input id="traffic" type="checkbox" onclick="traffic()">
 			<span class="slider round"></span>
 		  </label>
-		</a>
-		</li>
+		</a></li>
 		<li onclick="reset()" id="pbutton"><a href = "#">Reset Map</a></li>
 
 
@@ -143,7 +149,6 @@
 				<img src="images/schedule-menu.png" alt="add to schedule pic">
 				<img src="images/schedule.png" alt="add to schedule pic" style="width:100%">
 			  <div class="modal-footer">
-			  
 			  </div>
 			</div>
 
@@ -193,9 +198,6 @@
 		  <option value="los angeles, ca">Los Angeles</option>
 		</select>
 </div>
-
-
-
 
 
         <div id="Bottom-panel" style="display: none;">
